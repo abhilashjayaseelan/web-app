@@ -4,11 +4,13 @@ import { useState, useEffect } from "react"; //? importing hooks from react
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/Helper";
 
+
 // body
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]); //? creating a local state variable with the useState hook!!!
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchInput, setSearchInput] = useState();
+
 
   useEffect(() => {
     getRestaurants();

@@ -88,7 +88,7 @@ a {
 
 /* Styling for the button */
 .login-button {
-  background-color: #d74040;
+  background-color: #f04040;
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -100,7 +100,7 @@ a {
 
 /* Styling for when the button is hovered over */
 .login-button:hover {
-  background-color: #f04040;
+  background-color: rgb(218, 20, 20);
 }
 
 /* Styling for when the button is focused */
@@ -318,5 +318,162 @@ a {
   border-color: #3c5cbf;
 }
 
-/*todo user-signup form  -------------------------------------*/
+/*todo admin login form  -------------------------------------*/
 
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.admin-login-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.admin-login-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-login-form {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.admin-form-text {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin-form-email,
+.admin-form-password {
+  position: relative;
+}
+
+.admin-form-email input,
+.admin-form-password input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 2px solid #ced4da;
+}
+
+.admin-form-email label,
+.admin-form-password label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  pointer-events: none;
+  transition: all 0.3s ease-out;
+}
+
+.admin-form-email input:focus + label,
+.admin-form-password input:focus + label,
+.admin-form-email input:not(:placeholder-shown) + label,
+.admin-form-password input:not(:placeholder-shown) + label {
+  transform: translateY(-2rem);
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.admin-form-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.admin-form-button:hover {
+  background-color: #0069d9;
+}
+.admin-login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.admin-login-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.admin-login-img {
+  flex: 1;
+}
+
+.admin-login-img img {
+  max-width: 100%;
+}
+
+.admin-login-form {
+  flex: 1;
+}
+
+.admin-form-text {
+  text-align: center;
+}
+
+.admin-form-email,
+.admin-form-password {
+  position: relative;
+}
+
+.admin-form-email input,
+.admin-form-password input {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+}
+
+.admin-form-email label,
+.admin-form-password label {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font-size: 18px;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.admin-form-email input:focus + label,
+.admin-form-email input:not(:placeholder-shown) + label,
+.admin-form-password input:focus + label,
+.admin-form-password input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 0;
+  color: #2196f3;
+  font-size: 14px;
+}
+
+.admin-form-button {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-form-button:hover {
+  background-color: #0d8cf0;
+}

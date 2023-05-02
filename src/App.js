@@ -1,19 +1,16 @@
 import React from "react";
 //? importing component functions;
-import Header from "./components/Header";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
+import Body from "./pages/Body";
 import Error from "./components/Error";
-import UserLogin from "./components/UserLogin";
-import UserSignup from "./components/UserSignup";
+import UserLogin from "./pages/UserLogin";
+import UserSignup from "./pages/UserSignup";
+import AdminLogin from "./components/Admin/AdminLogin";
 import { createBrowserRouter, Outlet } from "react-router-dom"; //? importing router functions form router dom;
 
 const AppLayout = () => {
   return (
     <>
-      <Header />
       <Outlet />
-      <Footer />
     </>
   );
 };
@@ -34,8 +31,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <UserSignup/>
-      }
+        element: <UserSignup />,
+      },
+      {
+        path: "/admin",
+        element: <AdminLogin />,
+      },
     ],
   },
 ]);
