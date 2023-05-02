@@ -1,38 +1,322 @@
-.App {
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.body {
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.search-container {
+  margin-top: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+  width: 300px;
+  margin-right: 10px;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background-color: #a0a1a2;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #b5d1f0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-bottom: 2px solid #ddd; /* Add a bottom border */
+  background-color: #fff; /* Add a background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+}
+
+.logo {
+  width: 100px;
+  margin-right: 20px; /* Add some margin to separate the logo from the menu */
+}
+
+.nav-items > ul > li > a {
+  color: #555; /* Add some color to the menu links */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out; /* Add a transition effect */
+}
+
+.nav-items > ul > li > a:hover {
+  text-decoration: underline;
+  color: #000; /* Change the color on hover */
+}
+
+/* Styling for the button */
+.login-button {
+  background-color: #d74040;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for when the button is hovered over */
+.login-button:hover {
+  background-color: #f04040;
+}
+
+/* Styling for when the button is focused */
+.login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.3);
+}
+
+/* Styling for when the button is disabled */
+.login-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card {
+  width: 200px;
+  height: 350px;
+  border: 2px solid #eadcdc;
+  border-radius: 10px;
+  padding: 19px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #555;
+}
+
+.card-text {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #777;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  margin-left: 40px;
+  padding: 10px;
+}
+
+.shimmer-card {
+  width: 215px;
+  height: 215px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  border-radius: 3%;
+  background: lightgrey;
+}
+
+.error-page {
+  margin-top: 300px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #fff; /* Add a background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Open Sans", sans-serif;
+}
+
+.menu h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.menu img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu h3 {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.menu h3:first-child {
+  margin-top: 10px;
+}
+
+/*todo user-login form  -------------------------------------*/
+
+.login-container {
+  font-family: "Open Sans", sans-serif;
+  height: 80vh;
+}
+
+.login-row {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.image-div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-image {
+  width: 100%;
+  max-width: 400px;
 }
+
+.login-form {
+  flex: 1;
+  padding: 0 30px;
+}
+
+.login-header {
+  margin-left: 200px;
+  margin-bottom: 30px;
+}
+
+.email-error,
+.password-error {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  border-radius: 30px;
+  border: 2px solid #ced4da;
+  padding: 15px;
+  font-size: 16px;
+  color: #495057;
+}
+
+.form-control:focus {
+  border-color: #4d6dff;
+  box-shadow: 0 0 0 0.2rem rgba(77, 109, 255, 0.25);
+}
+
+.form-label {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background-color: #fff;
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.signup-button {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.signup-button a {
+  color: blue;
+  text-decoration: none;
+}
+
+.signup-button a:hover {
+  text-decoration: underline;
+}
+
+.btn-block {
+  border-radius: 30px;
+  background-color: #4d6dff;
+  border-color: #4d6dff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.btn-block:hover {
+  background-color: #3c5cbf;
+  border-color: #3c5cbf;
+}
+
+/*todo user-signup form  -------------------------------------*/
+

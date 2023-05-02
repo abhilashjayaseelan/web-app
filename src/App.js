@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+//? importing component functions;
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import Error from "./components/Error";
+import UserLogin from "./components/UserLogin";
+import UserSignup from "./components/UserSignup";
+import { createBrowserRouter, Outlet } from "react-router-dom"; //? importing router functions form router dom;
 
-function App() {
+const AppLayout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
   );
-}
+};
 
-export default App;
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/login",
+        element: <UserLogin />,
+      },
+      {
+        path: "/signup",
+        element: <UserSignup/>
+      }
+    ],
+  },
+]);
+
+export default appRouter;
