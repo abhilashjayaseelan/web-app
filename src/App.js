@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 //? importing component functions;
 import Body from "./pages/Body";
 import Error from "./components/Error";
 import UserLogin from "./pages/UserLogin";
 import UserSignup from "./pages/UserSignup";
-import AdminLogin from "./components/Admin/AdminLogin";
-import { createBrowserRouter, Outlet } from "react-router-dom"; //? importing router functions form router dom;
+import Admin from "./pages/Admin";
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import firebase from "./firebase/config";
+import { actions } from "./slices/userSlicer";
+import { useDispatch } from "react-redux";
 
 const AppLayout = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      dispatch(actions.userLoggedIn(user?.displayName));
+    });
+  });
   return (
     <>
       <Outlet />
@@ -35,7 +44,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/admin",
-        element: <AdminLogin />,
+        element: <Admin />,
       },
     ],
   },

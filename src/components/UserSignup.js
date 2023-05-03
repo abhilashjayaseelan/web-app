@@ -1,7 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import {registerUser} from "../redux/SignupAction"
 
 const UserSignup = (props) => {
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(registerUser({ email, password, userName, phone }));
+  };
+
   return (
     <>
       <div className="login-container">
@@ -14,7 +29,7 @@ const UserSignup = (props) => {
             />
           </div>
           <div className="login-form">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="login-header">
                 <h3>User Signup</h3>
                 <br />
@@ -34,6 +49,10 @@ const UserSignup = (props) => {
                   name="name"
                   id="form1Example03"
                   className="form-control form-control-lg"
+                  value={userName}
+                  onChange={(e) => {
+                    setUserName(e.target.value);
+                  }}
                   required
                 />
                 <label className="form-label">User Name</label>
@@ -47,6 +66,10 @@ const UserSignup = (props) => {
                   id="form1Example13"
                   className="form-control form-control-lg"
                   required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 />
                 <label className="form-label">Email address</label>
               </div>
@@ -59,6 +82,10 @@ const UserSignup = (props) => {
                   id="form1Example3"
                   className="form-control form-control-lg"
                   required
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
                 />
                 <label className="form-label">Phone</label>
               </div>
@@ -71,6 +98,10 @@ const UserSignup = (props) => {
                   id="form1Example23"
                   className="form-control form-control-lg"
                   required
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                 />
                 <label className="form-label">Password</label>
               </div>
@@ -83,7 +114,7 @@ const UserSignup = (props) => {
 
               {/* Submit button */}
               <button
-                type="submit-button"
+                type="submit"
                 className="btn btn-primary btn-lg btn-block"
               >
                 signup

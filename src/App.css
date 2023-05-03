@@ -46,16 +46,37 @@ a {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Center items vertically */
+  align-items: center; 
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 50px;
   margin-right: 50px;
-  border-bottom: 2px solid #ddd; /* Add a bottom border */
-  background-color: #fff; /* Add a background color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+  border-bottom: 2px solid #ddd; 
+  background-color: #fff; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   font-family: "Open Sans", sans-serif;
 }
+/* 
+.header {
+  border: 2px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding-left: 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0px 5px 10px rgba(0,  0,  0,  0.2);
+}
+
+.nav-items {
+  padding-right: 115px;
+ 
+} */
 
 .nav-items > ul {
   list-style-type: none;
@@ -101,6 +122,22 @@ a {
 /* Styling for when the button is hovered over */
 .login-button:hover {
   background-color: rgb(218, 20, 20);
+}
+
+.logout-button {
+  background-color: #a57cd7;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for when the button is hovered over */
+.logout-button:hover {
+  background-color: rgb(68, 0, 132);
 }
 
 /* Styling for when the button is focused */
@@ -355,6 +392,7 @@ a {
 .admin-form-email,
 .admin-form-password {
   position: relative;
+  margin-bottom: 30px;
 }
 
 .admin-form-email input,

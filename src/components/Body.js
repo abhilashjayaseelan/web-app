@@ -1,16 +1,14 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react"; //? importing hooks from react
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/Helper";
 
-
 // body
 const Body = () => {
-  const [allRestaurants, setAllRestaurants] = useState([]); //? creating a local state variable with the useState hook!!!
+  const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchInput, setSearchInput] = useState();
-
 
   useEffect(() => {
     getRestaurants();
@@ -56,11 +54,11 @@ const Body = () => {
       <div className="restaurant-list">
         {filteredRestaurants?.map((restaurant) => {
           return (
-            <Link to={"/restaurant/" + restaurant?.data?.id}>
-              <RestaurantCard
-                {...restaurant?.data}
-                key={restaurant?.data?.id}
-              />
+            <Link
+              to={"/restaurant/" + restaurant?.data?.id}
+              key={restaurant?.data?.id}
+            >
+              <RestaurantCard {...restaurant?.data} />
             </Link>
           );
         })}

@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import firebase from "../firebase/config";
 
 const UserLogin = (props) => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
   return (
     <>
       <div className="login-container">
@@ -14,7 +33,7 @@ const UserLogin = (props) => {
             />
           </div>
           <div className="login-form">
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="login-header">
                 <h3>User Login</h3>
                 <br />
@@ -35,6 +54,10 @@ const UserLogin = (props) => {
                   id="form1Example13"
                   className="form-control form-control-lg"
                   required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 />
                 <label className="form-label" htmlFor="form1Example13">
                   Email address
@@ -49,6 +72,10 @@ const UserLogin = (props) => {
                   id="form1Example23"
                   className="form-control form-control-lg"
                   required
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                 />
                 <label className="form-label" htmlFor="form1Example23">
                   Password
@@ -63,7 +90,7 @@ const UserLogin = (props) => {
 
               {/* Submit button */}
               <button
-                type="submit-button"
+                type="submit"
                 className="btn btn-primary btn-lg btn-block"
               >
                 Login

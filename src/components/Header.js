@@ -1,6 +1,8 @@
-// import { useState } from "react";
 import { LOGO_URL } from "../urls";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import firebase from "../firebase/config";
 
 const Title = () => {
   return (
@@ -11,7 +13,8 @@ const Title = () => {
 };
 
 const Header = () => {
-  // const [loginButton, setLoginButton] = useState(false);
+  const user = useSelector((state) => state?.user.user);
+  const navigate = useNavigate();
 
   return (
     <div className="header">
@@ -29,14 +32,29 @@ const Header = () => {
           </li>
           <li>Cart</li>
           <li>
-            <button className="login-button">
-              {
+            {user ? (
+              <span>{`Hi  ${user}`}</span>
+            ) : (
+              <button className="login-button">
                 <Link to={"/login"}>
                   <span>Login</span>
                 </Link>
-              }
-            </button>
+              </button>
+            )}
           </li>
+          {user && (
+            <li>
+              <button
+                className="logout-button"
+                onClick={() => {
+                  firebase.auth().signOut();
+                  navigate("/");
+                }}
+              >
+                <span>Logout</span>
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </div>

@@ -1,8 +1,12 @@
 import { combineReducers } from "redux";
-import counterReducer from "../slices/CounterSlicer";
+import adminAuthReducer from "../slices/AdminAuthSlice";
+import fireReducer from "../slices/FirebseSlice";
+import userReducer from "../slices/userSlicer";
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  adminAuth: adminAuthReducer,
+  firebase: fireReducer,
+  user: userReducer
 });
 
 export default rootReducer;
