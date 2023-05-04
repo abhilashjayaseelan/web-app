@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import {registerUser} from "../redux/SignupAction"
+import { registerUser } from "../redux/SignupAction";
+import { useNavigate } from "react-router-dom";
 
 const UserSignup = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,7 @@ const UserSignup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(registerUser({ email, password, userName, phone }));
+    navigate("/login");
   };
 
   return (

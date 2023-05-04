@@ -39,6 +39,8 @@ const Body = () => {
           value={searchInput}
           onChange={(e) => {
             setSearchInput(e.target.value);
+            const data = filterData(searchInput, allRestaurants);
+            setFilteredRestaurants(data);
           }}
         ></input>
         <button

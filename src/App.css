@@ -46,14 +46,14 @@ a {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 50px;
   margin-right: 50px;
-  border-bottom: 2px solid #ddd; 
-  background-color: #fff; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  border-bottom: 2px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: "Open Sans", sans-serif;
 }
 /* 
@@ -514,4 +514,59 @@ a {
 
 .admin-form-button:hover {
   background-color: #0d8cf0;
+}
+
+/*todo admin page user list----------------------------------*/
+
+.all-users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Open Sans", sans-serif;
+}
+
+.users-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.users-table th,
+.users-table td {
+  width: 25%;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.user-edit-btn,
+.user-delete-btn {
+  display: inline-block;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6eabec;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-delete-btn {
+  background-color: #fc0019;
+}
+
+.user-edit-btn:hover,
+.user-delete-btn:hover {
+  opacity: 0.8;
+}
+
+.admin-side-search-container{
+  margin-bottom: 10px;
 }
